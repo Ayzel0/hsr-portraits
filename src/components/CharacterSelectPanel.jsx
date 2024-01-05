@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import characters from '../data/characters.json'
 import elements from '../data/elements.json';
 import paths from '../data/paths.json';
 import CharacterPortrait from './CharacterPortrait';
@@ -57,7 +56,7 @@ const CharacterSelectPanel = ({ onPortraitClick, characters }) => {
         <div key={character['Character Name']}>
           <CharacterPortrait 
             charName={character['Character Name']} 
-            imgLink={character['Image Link']} 
+            imgLink={character['Image Path']} 
             rarity={character['Rarity']} 
             onClick={() => onPortraitClick(character['Character Name'])}
             rarityBackgrounds={true}
