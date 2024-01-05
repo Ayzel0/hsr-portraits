@@ -30,7 +30,7 @@ const SelectedCharacters = ({ selectedCharacterList, onPortraitClick, options })
   const displayBoxOptions = charactersExist ? `inline-block rounded-3xl ${backgroundColor}` : '';
 
   return (
-    <div className='bg-blue-950'>
+    <div className='bg-blue-950 flex flex-col'>
       <h1 className='text-4xl font-semibold text-white px-5 pt-5'>Selected Characters</h1>
       <div id='capture-box' className='inline-block p-5'>
         <div className={displayBoxOptions}>
@@ -51,7 +51,7 @@ const SelectedCharacters = ({ selectedCharacterList, onPortraitClick, options })
         </div>
       </div>
       {charactersExist &&
-      <>
+      <div className='block'>
         <button 
           onClick={() => handleCaptureClick('png')}
           className='bg-zinc-600 p-5 cursor-pointer text-white hover:bg-zinc-500 rounded-lg ml-16 mb-8'
@@ -60,7 +60,7 @@ const SelectedCharacters = ({ selectedCharacterList, onPortraitClick, options })
           onClick={() => handleCaptureClick('svg')}
           className='bg-zinc-600 p-5 cursor-pointer text-white hover:bg-zinc-500 rounded-lg ml-8 mb-8'
         >Download as SVG</button>
-      </>
+      </div>
       }
     </div>
   )

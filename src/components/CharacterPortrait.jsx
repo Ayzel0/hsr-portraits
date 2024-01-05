@@ -1,4 +1,4 @@
-const CharacterPortrait = ({ charName, imgLink, rarity, onClick, rarityBackgrounds }) => {
+const CharacterPortrait = ({ type='default', charName, imgLink, rarity, onClick, rarityBackgrounds }) => {
   let name = charName;
   
   // trimming bs names
@@ -8,7 +8,7 @@ const CharacterPortrait = ({ charName, imgLink, rarity, onClick, rarityBackgroun
   if (charName.includes('Imbibitor')) {
     name = 'Dan Heng IL';
   }
-  
+
   const bg_color = rarityBackgrounds
   ? rarity === 5 ? 'bg-five-star-gold' : 'bg-four-star-purple'
   : 'bg-slate-600';
