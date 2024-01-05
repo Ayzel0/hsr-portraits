@@ -45,13 +45,14 @@ const SelectedCharacters = ({ selectedCharacterList, onPortraitClick, options })
                   rarity={character['Rarity']}
                   onClick={() => onPortraitClick(character['Character Name'])}
                   rarityBackgrounds={options['rarityBackgrounds']}
+                  hideCharNames={options['hideCharNames']}
                 />
               </div>
             ))}
           </div>
         </div>
         :
-        <div className='flex items-center justify-center h-80'>
+        <div className='flex items-center justify-center h-96'>
           <h1 className='text-white text-2xl font-mono bg-slate-800 p-16 rounded-xl'>Team will appear here!</h1>
         </div>
         }

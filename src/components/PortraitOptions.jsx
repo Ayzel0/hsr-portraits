@@ -19,6 +19,11 @@ const PortraitOptions = ({ options, setOptions }) => {
     setOptions(newOptions);
   }
 
+  const handleHideNamesChange = (event) => {
+    const newOptions = {...options, [event.target.name]: event.target.checked};
+    setOptions(newOptions)
+  }
+
   return (
     <div className='bg-blue-950'>
       <h1 className='text-4xl font-semibold text-white px-8 pt-5'>Team Portrait Options</h1>
@@ -89,6 +94,15 @@ const PortraitOptions = ({ options, setOptions }) => {
             name='rarityBackgrounds'
             onChange={handleRarityBackgroundsChange}
             checked={options.rarityBackgrounds}
+          />
+        </form>
+        <h1 className='text-2xl text-white mt-5'>Hide Character Names</h1>
+        <form>
+          <input 
+            type='checkbox'
+            name='hideCharNames'
+            onChange={handleHideNamesChange}
+            checked={options.hideCharNames}
           />
         </form>
       </div>

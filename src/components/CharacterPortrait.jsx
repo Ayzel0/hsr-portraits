@@ -1,4 +1,4 @@
-const CharacterPortrait = ({ type='default', charName, imgLink, rarity, onClick, rarityBackgrounds }) => {
+const CharacterPortrait = ({ charName, imgLink, rarity, onClick, rarityBackgrounds, hideCharNames=false }) => {
   let name = charName;
   
   // trimming bs names
@@ -16,9 +16,11 @@ const CharacterPortrait = ({ type='default', charName, imgLink, rarity, onClick,
   return (
     <div onClick={() => onClick(charName)} className={bg_classes}>
       <img src={imgLink} className='w-32'/>
+      {!hideCharNames &&
       <div className='w-32 bg-amber-50'>
         <p className='text-m font-medium text-center py-3'>{name}</p>
       </div>
+      }
     </div>
   )
 }

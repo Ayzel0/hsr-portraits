@@ -9,7 +9,8 @@ const CharPortraits = () => {
     'backgroundColor': 'slate',
     'backgroundTone': '800',
     'teamName': '',
-    'rarityBackgrounds': true
+    'rarityBackgrounds': true,
+    'hideCharNames': false,
   })
 
   const changeOptions = (newOptions) => {
