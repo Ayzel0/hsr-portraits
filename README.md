@@ -1,8 +1,7 @@
-# React + Vite
+# HSR Team Portrait Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Created by Ayzel
 
-Currently, two official plugins are available:
+## Instructions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Add team members to a team list by clicking on their portraits. Generate images (current supported formats of SVG and PNG) by clicking the buttons. Adjust team names and background colors with options.
