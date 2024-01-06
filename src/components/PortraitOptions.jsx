@@ -1,4 +1,25 @@
+import { useState, useEffect } from 'react';
+
 const PortraitOptions = ({ options, setOptions }) => {
+  const [displayEidolons, setDisplayEidolons] = useState(false);
+  const [hideCharNames, setHideCharNames] = useState(false);
+  const [rarityBackgrounds, setRarityBackgrounds] = useState(true);
+
+  useEffect(() => {
+    const newOptions = {...options, 'displayEidolons': displayEidolons};
+    setOptions(newOptions);
+  }, [displayEidolons])
+
+  useEffect(() => { 
+    const newOptions = {...options, 'hideCharNames': hideCharNames};
+    setOptions(newOptions);
+  }, [hideCharNames])
+
+  useEffect(() => {
+    const newOptions = {...options, 'rarityBackgrounds': rarityBackgrounds};
+    setOptions(newOptions);
+  }, [rarityBackgrounds])
+
   const handleBackgroundColorChange = (event) => {
     const newOptions = {...options, [event.target.name]: event.target.value};
     setOptions(newOptions);
@@ -12,16 +33,6 @@ const PortraitOptions = ({ options, setOptions }) => {
   const handleTeamNameChange = (event) => {
     const newOptions = {...options, [event.target.name]: event.target.value};
     setOptions(newOptions);
-  }
-
-  const handleRarityBackgroundsChange = (event) => {
-    const newOptions = {...options, [event.target.name]: event.target.checked};
-    setOptions(newOptions);
-  }
-
-  const handleHideNamesChange = (event) => {
-    const newOptions = {...options, [event.target.name]: event.target.checked};
-    setOptions(newOptions)
   }
 
   return (
@@ -87,24 +98,48 @@ const PortraitOptions = ({ options, setOptions }) => {
             onChange={handleTeamNameChange}
           />
         </form>
-        <h1 className='text-2xl text-white mt-5'>Rarity Background Colors</h1>
-        <form className='mt-5'>
-          <input 
-            type='checkbox'
-            name='rarityBackgrounds'
-            onChange={handleRarityBackgroundsChange}
-            checked={options.rarityBackgrounds}
-          />
-        </form>
-        <h1 className='text-2xl text-white mt-5'>Hide Character Names</h1>
-        <form>
-          <input 
-            type='checkbox'
-            name='hideCharNames'
-            onChange={handleHideNamesChange}
-            checked={options.hideCharNames}
-          />
-        </form>
+
+        <div className='flex flex-row items-center relative mt-5'> { /* rarity backgrounds select */ }
+          <h1 className='text-2xl text-white'>Show Rarity Backgrounds</h1>
+          <div className='flex flex-row items-center ml-4 rounded-lg bg-zinc-700 absolute right-48'>
+            <p 
+              className={`text-white px-5 py-2 ${!rarityBackgrounds && 'bg-zinc-500'} rounded-l-lg`}
+              onClick={() => setRarityBackgrounds(false)}
+            >Off</p>
+            <p 
+              className={`text-white px-5 py-2 ${rarityBackgrounds && 'bg-zinc-500'} rounded-r-lg`}
+              onClick={() => setRarityBackgrounds(true)}
+            >On</p>
+          </div>
+        </div>
+
+        <div className='flex flex-row items-center relative mt-5'> { /* hide character names select */ }
+          <h1 className='text-2xl text-white'>Hide Character Names</h1>
+          <div className='flex flex-row items-center ml-4 rounded-lg bg-zinc-700 absolute right-48'>
+            <p 
+              className={`text-white px-5 py-2 ${!hideCharNames && 'bg-zinc-500'} rounded-l-lg`}
+              onClick={() => setHideCharNames(false)}
+            >Off</p>
+            <p 
+              className={`text-white px-5 py-2 ${hideCharNames && 'bg-zinc-500'} rounded-r-lg`}
+              onClick={() => setHideCharNames(true)}
+            >On</p>
+          </div>
+        </div>
+
+        <div className='flex flex-row items-center relative mt-5'> { /* eidolon levels select */}
+          <h1 className='text-2xl text-white'>Eidolon Levels</h1>
+          <div className='flex flex-row items-center ml-4 rounded-lg bg-zinc-700 absolute right-48'>
+            <p 
+              className={`text-white px-5 py-2 ${!displayEidolons && 'bg-zinc-500'} rounded-l-lg`}
+              onClick={() => setDisplayEidolons(false)}
+            >Off</p>
+            <p 
+              className={`text-white px-5 py-2 ${displayEidolons && 'bg-zinc-500'} rounded-r-lg`}
+              onClick={() => setDisplayEidolons(true)}
+            >On</p>
+          </div>
+        </div>
       </div>
     </div>
   )

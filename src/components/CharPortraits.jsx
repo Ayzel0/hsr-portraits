@@ -11,6 +11,7 @@ const CharPortraits = () => {
     'teamName': '',
     'rarityBackgrounds': true,
     'hideCharNames': false,
+    'displayEidolons': false,
   })
 
   const changeOptions = (newOptions) => {
