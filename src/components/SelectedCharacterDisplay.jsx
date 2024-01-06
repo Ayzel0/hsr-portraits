@@ -33,7 +33,7 @@ const SelectedCharacters = ({ selectedCharacterList, onPortraitClick, options })
     <div className='bg-blue-950'>
       <h1 className='text-4xl font-semibold text-white px-5 pt-5'>Selected Characters</h1>
       {charactersExist ? 
-      <div id='capture-box' className='inline-block m-5'>
+      <div id='capture-box' className='inline-block p-5'>
         <div className={displayBoxOptions}>
           {(charactersExist && options['teamName'].length > 0) && <h1 className='text-3xl font-semibold text-white px-8 pt-5'>{options['teamName']}</h1>}
           <div className='flex flex-row gap-4 p-8 items-center'> {/* selected characters panel */}

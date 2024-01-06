@@ -21,7 +21,11 @@ export default {
         extend: {
         colors: {
             'four-star-purple': '#7A4E92',
-            'five-star-gold': '#BA9F36'
+            'five-star-gold': '#CAA367',
+            'five-star-gold-light': '#734440',
+            'five-star-gold-dark': '#CBA368',
+            'four-star-purple-light': '#373658',
+            'four-star-purple-dark': '#7650B1'
         }
         },
     },

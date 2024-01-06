@@ -9,8 +9,9 @@ const CharacterPortrait = ({ charName, imgLink, rarity, onClick, rarityBackgroun
     name = 'Dan Heng IL';
   }
 
-  const bg_color = rarityBackgrounds
-  ? rarity === 5 ? 'bg-five-star-gold' : 'bg-four-star-purple'
+  const bg_color = rarityBackgrounds ? rarity === 5 
+    ? 'bg-gradient-to-b from-five-star-gold-light to-five-star-gold-dark' 
+    : 'bg-gradient-to-b from-four-star-purple-light to-four-star-purple-dark'
   : 'bg-slate-600';
   const bg_classes = `inline-flex flex-col items-center border-slate-950 rounded-2xl cursor-pointer overflow-hidden ${bg_color}`;
   return (
