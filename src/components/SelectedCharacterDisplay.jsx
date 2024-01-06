@@ -30,10 +30,10 @@ const SelectedCharacters = ({ selectedCharacterList, onPortraitClick, options })
   const displayBoxOptions = charactersExist ? `inline-block rounded-3xl ${backgroundColor}` : '';
 
   return (
-    <div className='bg-blue-950 flex flex-col'>
+    <div className='bg-blue-950'>
       <h1 className='text-4xl font-semibold text-white px-5 pt-5'>Selected Characters</h1>
+      {charactersExist ? 
       <div id='capture-box' className='inline-block p-5'>
-        {charactersExist ?
         <div className={displayBoxOptions}>
           {(charactersExist && options['teamName'].length > 0) && <h1 className='text-3xl font-semibold text-white px-8 pt-5'>{options['teamName']}</h1>}
           <div className='flex flex-row gap-4 p-8 items-center'> {/* selected characters panel */}
@@ -51,12 +51,14 @@ const SelectedCharacters = ({ selectedCharacterList, onPortraitClick, options })
             ))}
           </div>
         </div>
-        :
-        <div className='flex items-center justify-center h-96'>
+      </div> 
+      :
+      <div className='flex items-center justify-center h-96'>
+        <div className='text-center'>
           <h1 className='text-white text-2xl font-mono bg-slate-800 p-16 rounded-xl'>Team will appear here!</h1>
         </div>
-        }
       </div>
+      }
       {charactersExist &&
       <div className='block'>
         <button 
