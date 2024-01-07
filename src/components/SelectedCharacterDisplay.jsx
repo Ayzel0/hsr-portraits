@@ -36,7 +36,7 @@ const SelectedCharacters = ({ selectedCharacterList, onPortraitClick, options })
       <div id='capture-box' className='inline-block p-5'>
         <div className={displayBoxOptions}>
           {(charactersExist && options['teamName'].length > 0) && <h1 className='text-3xl font-semibold text-white px-8 pt-5'>{options['teamName']}</h1>}
-          <div className='flex flex-row gap-4 p-8 items-center'> {/* selected characters panel */}
+          <div className='flex flex-row gap-4 p-8'> {/* selected characters panel */}
             {selectedCharacterList.map((character) => (
               <div key={character['Character Name']}>
                 <CharacterPortrait 

@@ -32,11 +32,6 @@ const CharPortraits = () => {
       setCharacterList(characterList.filter(character => character['Character Name'] !== charName));
     }
   }
-
-  // debug
-  useEffect(() => {
-    console.log(characterList);
-  }, [characterList]);
   
   return (
     <div>

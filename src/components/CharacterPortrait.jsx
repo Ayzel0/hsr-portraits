@@ -1,21 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import HoverMenu from './HoverMenu';
 
 const CharacterPortrait = ({ charName, imgLink, rarity, onClick, rarityBackgrounds, hideCharNames=false, displayEidolons=false, onDisplay=false }) => {
-  let name = charName;
+  const [name, setName] = useState(charName);
   const [isHovered, setIsHovered] = useState(false);
+  const [displayCharName, setDisplayCharName] = useState(true);
   const [eidolonLevel, setEidolonLevel] = useState(0);
 
   const handleMouseEnter = () => {setIsHovered(true);}
   const handleMouseLeave = () => {setIsHovered(false);}
   
-  // trimming bs names
-  if (charName.includes('Trailblazer')) {
-    name = 'Trailblazer';
-  }
-  if (charName.includes('Imbibitor')) {
-    name = 'Dan Heng IL';
-  }
+  useEffect(() => {
+    let newName = charName;
+    if (charName.includes('Trailblazer')) {
+      newName = 'Trailblazer';
+    } else if (charName.includes('Imbibitor')) {
+      newName = 'Dan Heng IL';
+    }
+    setName(newName);
+  }, [charName]);
 
   const bg_color = rarityBackgrounds ? rarity === 5 
     ? 'bg-gradient-to-b from-five-star-gold-light to-five-star-gold-dark' 
@@ -47,6 +50,9 @@ const CharacterPortrait = ({ charName, imgLink, rarity, onClick, rarityBackgroun
         <HoverMenu 
           eidolonLevel={eidolonLevel}
           setEidolonLevel={setEidolonLevel}
+          displayCharName={displayCharName}
+          setDisplayCharName={setDisplayCharName}
+          setName={setName}
         />
       }
     </div>
