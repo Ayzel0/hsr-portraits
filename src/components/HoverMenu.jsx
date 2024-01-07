@@ -1,4 +1,4 @@
-const HoverMenu = ({ eidolonLevel, setEidolonLevel, displayCharName, setDisplayCharName, setName }) => {
+const HoverMenu = ({ eidolonLevel, setEidolonLevel, displayCharName, setDisplayCharName, setName, roleName, setRoleName }) => {
   const handleEidolonLevelChange = (event) => {
     const value = event.target.value;
     if (value <= 6 && value >= 0) {
@@ -9,6 +9,10 @@ const HoverMenu = ({ eidolonLevel, setEidolonLevel, displayCharName, setDisplayC
   const handleCharNameChange = (event) => {
     setDisplayCharName(false);
     setName(event.target.value);
+  }
+
+  const handleRoleNameChange = (event) => {
+    setRoleName(event.target.value);
   }
 
   return (
@@ -34,6 +38,16 @@ const HoverMenu = ({ eidolonLevel, setEidolonLevel, displayCharName, setDisplayC
             <input 
               type='text'
               onChange={handleCharNameChange}
+            />
+          </form>
+        </div>
+
+        <div className='text-black flex flex-row mt-5'> { /* adjust role name */ }
+          <p className='text-white mx-5'>Change Role Name</p>
+          <form>
+            <input 
+              type='text'
+              onChange={handleRoleNameChange}
             />
           </form>
         </div>

@@ -47,6 +47,7 @@ const SelectedCharacters = ({ selectedCharacterList, onPortraitClick, options })
                   rarityBackgrounds={options['rarityBackgrounds']}
                   hideCharNames={options['hideCharNames']}
                   displayEidolons={options['displayEidolons']}
+                  showRoles={options['showRoles']}
                   onDisplay={true}
                 />
               </div>

@@ -4,21 +4,27 @@ const PortraitOptions = ({ options, setOptions }) => {
   const [displayEidolons, setDisplayEidolons] = useState(false);
   const [hideCharNames, setHideCharNames] = useState(false);
   const [rarityBackgrounds, setRarityBackgrounds] = useState(true);
+  const [showRoles, setShowRoles] = useState(false);
 
   useEffect(() => {
     const newOptions = {...options, 'displayEidolons': displayEidolons};
     setOptions(newOptions);
-  }, [displayEidolons])
+  }, [displayEidolons]);
 
   useEffect(() => { 
     const newOptions = {...options, 'hideCharNames': hideCharNames};
     setOptions(newOptions);
-  }, [hideCharNames])
+  }, [hideCharNames]);
 
   useEffect(() => {
     const newOptions = {...options, 'rarityBackgrounds': rarityBackgrounds};
     setOptions(newOptions);
-  }, [rarityBackgrounds])
+  }, [rarityBackgrounds]);
+
+  useEffect(() => {
+    const newOptions = {...options, 'showRoles': showRoles};
+    setOptions(newOptions);
+  }, [showRoles]);
 
   const handleBackgroundColorChange = (event) => {
     const newOptions = {...options, [event.target.name]: event.target.value};
@@ -137,6 +143,20 @@ const PortraitOptions = ({ options, setOptions }) => {
             <p 
               className={`text-white px-5 py-2 ${displayEidolons && 'bg-zinc-500'} rounded-r-lg`}
               onClick={() => setDisplayEidolons(true)}
+            >On</p>
+          </div>
+        </div>
+
+        <div className='flex flex-row items-center relative mt-5'> { /* team roles */}
+          <h1 className='text-2xl text-white'>Show Character Roles</h1>
+          <div className='flex flex-row items-center ml-4 rounded-lg bg-zinc-700 absolute right-48 cursor-pointer'>
+            <p 
+              className={`text-white px-5 py-2 ${!showRoles && 'bg-zinc-500'} rounded-l-lg`}
+              onClick={() => setShowRoles(false)}
+            >Off</p>
+            <p 
+              className={`text-white px-5 py-2 ${showRoles && 'bg-zinc-500'} rounded-r-lg`}
+              onClick={() => setShowRoles(true)}
             >On</p>
           </div>
         </div>

@@ -12,6 +12,7 @@ const CharPortraits = () => {
     'rarityBackgrounds': true,
     'hideCharNames': false,
     'displayEidolons': false,
+    'showRoles': false,
   })
 
   const changeOptions = (newOptions) => {
