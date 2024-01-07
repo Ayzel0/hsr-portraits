@@ -101,7 +101,7 @@ const PortraitOptions = ({ options, setOptions }) => {
 
         <div className='flex flex-row items-center relative mt-5'> { /* rarity backgrounds select */ }
           <h1 className='text-2xl text-white'>Show Rarity Backgrounds</h1>
-          <div className='flex flex-row items-center ml-4 rounded-lg bg-zinc-700 absolute right-48'>
+          <div className='flex flex-row items-center ml-4 rounded-lg bg-zinc-700 absolute right-48 cursor-pointer'>
             <p 
               className={`text-white px-5 py-2 ${!rarityBackgrounds && 'bg-zinc-500'} rounded-l-lg`}
               onClick={() => setRarityBackgrounds(false)}
@@ -115,7 +115,7 @@ const PortraitOptions = ({ options, setOptions }) => {
 
         <div className='flex flex-row items-center relative mt-5'> { /* hide character names select */ }
           <h1 className='text-2xl text-white'>Hide Character Names</h1>
-          <div className='flex flex-row items-center ml-4 rounded-lg bg-zinc-700 absolute right-48'>
+          <div className='flex flex-row items-center ml-4 rounded-lg bg-zinc-700 absolute right-48 cursor-pointer'>
             <p 
               className={`text-white px-5 py-2 ${!hideCharNames && 'bg-zinc-500'} rounded-l-lg`}
               onClick={() => setHideCharNames(false)}
@@ -129,7 +129,7 @@ const PortraitOptions = ({ options, setOptions }) => {
 
         <div className='flex flex-row items-center relative mt-5'> { /* eidolon levels select */}
           <h1 className='text-2xl text-white'>Eidolon Levels</h1>
-          <div className='flex flex-row items-center ml-4 rounded-lg bg-zinc-700 absolute right-48'>
+          <div className='flex flex-row items-center ml-4 rounded-lg bg-zinc-700 absolute right-48 cursor-pointer'>
             <p 
               className={`text-white px-5 py-2 ${!displayEidolons && 'bg-zinc-500'} rounded-l-lg`}
               onClick={() => setDisplayEidolons(false)}

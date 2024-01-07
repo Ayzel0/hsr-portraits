@@ -34,7 +34,7 @@ const CharacterPortrait = ({ charName, imgLink, rarity, onClick, rarityBackgroun
         <div className='relative'>
           <img src={imgLink} className='w-32'/>
           {displayEidolons === true &&
-            <p className='absolute top-0 right-0 p-1 bg-slate-300/[0.4] font-bold rounded-bl-lg'>E{eidolonLevel}</p>
+            <p className='absolute top-0 right-0 p-1 bg-slate-300/[0.6] font-bold rounded-bl-lg'>E{eidolonLevel}</p>
           }
         </div>
         {!hideCharNames &&
