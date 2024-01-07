@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const PortraitOptions = ({ options, setOptions }) => {
   const [displayEidolons, setDisplayEidolons] = useState(false);
-  const [hideCharNames, setHideCharNames] = useState(false);
+  const [showCharNames, setShowCharNames] = useState(true);
   const [rarityBackgrounds, setRarityBackgrounds] = useState(true);
   const [showRoles, setShowRoles] = useState(false);
 
@@ -12,9 +12,9 @@ const PortraitOptions = ({ options, setOptions }) => {
   }, [displayEidolons]);
 
   useEffect(() => { 
-    const newOptions = {...options, 'hideCharNames': hideCharNames};
+    const newOptions = {...options, 'showCharNames': showCharNames};
     setOptions(newOptions);
-  }, [hideCharNames]);
+  }, [showCharNames]);
 
   useEffect(() => {
     const newOptions = {...options, 'rarityBackgrounds': rarityBackgrounds};
@@ -119,16 +119,16 @@ const PortraitOptions = ({ options, setOptions }) => {
           </div>
         </div>
 
-        <div className='flex flex-row items-center relative mt-5'> { /* hide character names select */ }
-          <h1 className='text-2xl text-white'>Hide Character Names</h1>
+        <div className='flex flex-row items-center relative mt-5'> { /* show character names select */ }
+          <h1 className='text-2xl text-white'>Show Character Names</h1>
           <div className='flex flex-row items-center ml-4 rounded-lg bg-zinc-700 absolute right-48 cursor-pointer'>
             <p 
-              className={`text-white px-5 py-2 ${!hideCharNames && 'bg-zinc-500'} rounded-l-lg`}
-              onClick={() => setHideCharNames(false)}
+              className={`text-white px-5 py-2 ${!showCharNames && 'bg-zinc-500'} rounded-l-lg`}
+              onClick={() => setShowCharNames(false)}
             >Off</p>
             <p 
-              className={`text-white px-5 py-2 ${hideCharNames && 'bg-zinc-500'} rounded-r-lg`}
-              onClick={() => setHideCharNames(true)}
+              className={`text-white px-5 py-2 ${showCharNames && 'bg-zinc-500'} rounded-r-lg`}
+              onClick={() => setShowCharNames(true)}
             >On</p>
           </div>
         </div>

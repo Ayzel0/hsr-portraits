@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import HoverMenu from './HoverMenu';
 
-const CharacterPortrait = ({ charName, imgLink, rarity, onClick, rarityBackgrounds, hideCharNames=false, displayEidolons=false, showRoles=false, onDisplay=false }) => {
+const CharacterPortrait = ({ charName, imgLink, rarity, onClick, rarityBackgrounds, showCharNames=true, displayEidolons=false, showRoles=false, onDisplay=false }) => {
   const [name, setName] = useState(charName);
   const [isHovered, setIsHovered] = useState(false);
   const [displayCharName, setDisplayCharName] = useState(true);
@@ -42,9 +42,9 @@ const CharacterPortrait = ({ charName, imgLink, rarity, onClick, rarityBackgroun
               <p className='absolute top-0 right-0 p-1 bg-slate-300/[0.6] font-bold rounded-bl-lg'>E{eidolonLevel}</p>
             }
           </div>
-          {!hideCharNames &&
+          {showCharNames &&
           <div className='w-32 bg-amber-50'>
-            <p className='text-m font-medium text-center py-3 px-2'>{name}</p>
+            <p className='text-m font-medium text-center py-3 px-1'>{name}</p>
           </div>
           }
         </div>
@@ -52,17 +52,20 @@ const CharacterPortrait = ({ charName, imgLink, rarity, onClick, rarityBackgroun
           <HoverMenu 
             eidolonLevel={eidolonLevel}
             setEidolonLevel={setEidolonLevel}
-            displayCharName={displayCharName}
             setDisplayCharName={setDisplayCharName}
+            name={name}
             setName={setName}
             roleName={roleName}
             setRoleName={setRoleName}
           />
         }
       </div>
+
       <div>
         {(showRoles && roleName!=='') &&
-        <p className='text-white text-center mt-5 font-semibold'>{roleName}</p>
+        <div className='flex flex-row justify-center max-w-32 mx-auto'>
+          <p className='text-black text-center mt-5 font-semibold bg-neutral-300 py-1 px-3 max-w-full	inline-flex flex-shrink rounded-2xl text-wrap'>{roleName}</p>
+        </div>
         }
       </div>
     </>

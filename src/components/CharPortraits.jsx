@@ -10,13 +10,14 @@ const CharPortraits = () => {
     'backgroundTone': '800',
     'teamName': '',
     'rarityBackgrounds': true,
-    'hideCharNames': false,
+    'showCharNames': true,
     'displayEidolons': false,
     'showRoles': false,
   })
 
   const changeOptions = (newOptions) => {
     setOptions(newOptions);
+    console.log(newOptions);
   }
 
   const [characterList, setCharacterList] = useState([]);

@@ -1,4 +1,4 @@
-const HoverMenu = ({ eidolonLevel, setEidolonLevel, displayCharName, setDisplayCharName, setName, roleName, setRoleName }) => {
+const HoverMenu = ({ eidolonLevel, setEidolonLevel, setDisplayCharName, name, setName, roleName, setRoleName }) => {
   const handleEidolonLevelChange = (event) => {
     const value = event.target.value;
     if (value <= 6 && value >= 0) {
@@ -27,6 +27,7 @@ const HoverMenu = ({ eidolonLevel, setEidolonLevel, displayCharName, setDisplayC
               type='number'
               min={0}
               max={6}
+              value={eidolonLevel}
               onChange={handleEidolonLevelChange}
             />
           </form>
@@ -37,6 +38,7 @@ const HoverMenu = ({ eidolonLevel, setEidolonLevel, displayCharName, setDisplayC
           <form>
             <input 
               type='text'
+              value={name}
               onChange={handleCharNameChange}
             />
           </form>
@@ -47,6 +49,7 @@ const HoverMenu = ({ eidolonLevel, setEidolonLevel, displayCharName, setDisplayC
           <form>
             <input 
               type='text'
+              value={roleName}
               onChange={handleRoleNameChange}
             />
           </form>

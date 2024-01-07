@@ -45,7 +45,7 @@ const SelectedCharacters = ({ selectedCharacterList, onPortraitClick, options })
                   rarity={character['Rarity']}
                   onClick={() => onPortraitClick(character['Character Name'])}
                   rarityBackgrounds={options['rarityBackgrounds']}
-                  hideCharNames={options['hideCharNames']}
+                  showCharNames={options['showCharNames']}
                   displayEidolons={options['displayEidolons']}
                   showRoles={options['showRoles']}
                   onDisplay={true}
