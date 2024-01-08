@@ -3,6 +3,7 @@ import CharacterSelectPanel from "./CharacterSelectPanel";
 import SelectedCharacters from './SelectedCharacterDisplay';
 import characters from '../data/characters.json';
 import PortraitOptions from './PortraitOptions';
+import BottomBar from './BottomBar';
 
 const CharPortraits = () => {
   const [options, setOptions] = useState({
@@ -17,7 +18,6 @@ const CharPortraits = () => {
 
   const changeOptions = (newOptions) => {
     setOptions(newOptions);
-    console.log(newOptions);
   }
 
   const [characterList, setCharacterList] = useState([]);
@@ -52,6 +52,7 @@ const CharPortraits = () => {
         onPortraitClick={onPortraitClick}
         characters={characters}
       />
+      <BottomBar />
     </div>
   )
 }

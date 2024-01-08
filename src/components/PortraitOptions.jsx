@@ -134,7 +134,7 @@ const PortraitOptions = ({ options, setOptions }) => {
         </div>
 
         <div className='flex flex-row items-center relative mt-5'> { /* eidolon levels select */}
-          <h1 className='text-2xl text-white'>Eidolon Levels</h1>
+          <h1 className='text-2xl text-white'>Show Eidolon Levels</h1>
           <div className='flex flex-row items-center ml-4 rounded-lg bg-zinc-700 absolute right-48 cursor-pointer'>
             <p 
               className={`text-white px-5 py-2 ${!displayEidolons && 'bg-zinc-500'} rounded-l-lg`}
