@@ -4,7 +4,7 @@ const PortraitOptions = ({ options, setOptions }) => {
   const [displayEidolons, setDisplayEidolons] = useState(false);
   const [showCharNames, setShowCharNames] = useState(true);
   const [rarityBackgrounds, setRarityBackgrounds] = useState(true);
-  const [showRoles, setShowRoles] = useState(false);
+  const [showRoles, setShowRoles] = useState(true);
 
   useEffect(() => {
     const newOptions = {...options, 'displayEidolons': displayEidolons};

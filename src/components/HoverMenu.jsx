@@ -19,41 +19,37 @@ const HoverMenu = ({ eidolonLevel, setEidolonLevel, setDisplayCharName, name, se
     <div className=' bg-transparent absolute pt-2 z-10'>
       <div className='bg-emerald-700 text-white rounded-2xl pb-5'>
         <p className='font-semibold text-xl p-5'>Individual Character Portrait Options</p>
-        
-        <div className='text-black flex flex-row'> { /* adjust eidolon level */ }
-          <p className='text-white mx-5'>Eidolon Level</p>
-          <form>
-            <input 
+        <form className='text-black flex flex-col'>
+          <div className='flex flex-row relative'>
+            <p className='text-white mx-5'>Eidolon Level</p>
+            <input
+              className='absolute right-2'
               type='number'
               min={0}
               max={6}
               value={eidolonLevel}
               onChange={handleEidolonLevelChange}
             />
-          </form>
-        </div>
-
-        <div className='text-black flex flex-row mt-5'> { /* adjust character name */ }
-          <p className='text-white mx-5'>Change Name Label</p>
-          <form>
+          </div>
+          <div className='flex flex-row mt-2 relative'>
+            <p className='text-white mx-5'>Change Name Label</p>
             <input 
+              className='absolute right-2'
               type='text'
               value={name}
               onChange={handleCharNameChange}
             />
-          </form>
-        </div>
-
-        <div className='text-black flex flex-row mt-5'> { /* adjust role name */ }
-          <p className='text-white mx-5'>Change Role Name</p>
-          <form>
+          </div>
+          <div className='flex flex-row mt-2 relative'>
+            <p className='text-white mx-5'>Change Role Name</p>
             <input 
+              className='absolute right-2'
               type='text'
               value={roleName}
               onChange={handleRoleNameChange}
             />
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   )
