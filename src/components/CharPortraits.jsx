@@ -4,6 +4,7 @@ import SelectedCharacters from './SelectedCharacterDisplay';
 import characters from '../data/characters.json';
 import PortraitOptions from './PortraitOptions';
 import BottomBar from './BottomBar';
+import TopBar from './TopBar';
 
 const CharPortraits = () => {
   const [options, setOptions] = useState({
@@ -37,6 +38,7 @@ const CharPortraits = () => {
   
   return (
     <div>
+      <TopBar />
       <div className='grid grid-cols-2 h-82%'>
         <SelectedCharacters 
           selectedCharacterList={characterList} 
